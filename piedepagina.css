@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.footer {
+  background-color: #C8D495;
+  padding: 20px;
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+}
+
+.logo {
+  width: 50px;
+  margin-right: 20px; /* Espacio entre el logo y el título */
+}
+
+.title {
+  color: #86654B;
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 2px 2px 4px #86654B;
+  margin: 0; /* Elimina los márgenes predeterminados */
+  font-size: 18px;
+}
+
+.footer a {
+  margin-right: 10px; /* Espacio entre los íconos de redes sociales */
+}
+
+.footer a img {
+  width: 30px; /* Tamaño común para todos los íconos */
+  height: auto;
+}
+
+/* Estilos específicos para cada ícono */
+.footer .whats img {
+  width: 30px;
+}
+
+.footer .insta img {
+  width: 1000px;
+}
+
+.footer .face img {
+  width: 30px;
+}
+
+.footer .tiktok img {
+  width: 30px;
+  height: auto; /* Ajuste automático de la altura */
+}

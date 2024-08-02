@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones Semilla</title>
+    <link rel="stylesheet" href="csspruebas.css">
+</head>
+<body>
+    <button class="semilla">Botón Semilla</button>
+</body>
+</html><body >
+    <header class="header">
+        <video autoplay muted loop id="video-background">
+            <source src="videoem.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+        </video>
+      <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.semilla {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    outline: none; /* Elimina el borde al hacer click */
+    transition: background-color 0.3s ease;
+}
+
+.semilla:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background-color: #388E3C;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.semilla:hover:before {
+    transform: translateY(-150%);
+}
+
+.semilla:active:before {
+    transform: translateY(-100%);
+}
+
+
+      </style>
