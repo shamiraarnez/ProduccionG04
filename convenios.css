@@ -1,14 +1,20 @@
-/* Asegúrate de que el `body` ocupe toda la altura de la pantalla */
 html, body {
     height: 100%;
     margin: 0;
+    background-image: url(https://media4.giphy.com/media/xdkXW7Scx6gus/source.gif);
+    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    min-height: 50vh; /* Mínima altura del contenedor igual a la altura de la pantalla */
+    background-attachment: fixed;
 }
 
 /* El contenedor principal de la cuadrícula */
 .parent {
     display: grid;
-    grid-template-columns: 1fr; /* Una sola columna */
-    grid-template-rows: repeat(5, 400px); /* Altura fija para cada fila */
+    grid-template-columns: 34fr; /* Una sola columna */
+    width: 90vw;
+    grid-template-rows: repeat(5, 300px); /* Altura fija para cada fila */
     grid-template-areas:
         "div1"
         "div2"
@@ -18,13 +24,8 @@ html, body {
     gap: 30px; /* Espacio entre los elementos, ajustable */
     
     /* Configuración de la imagen de fondo */
-    background-image: url(https://media4.giphy.com/media/xdkXW7Scx6gus/source.gif);
-    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    
-    /* Para asegurar que ocupe toda la altura de la pantalla */
-    min-height: 30vh; /* Mínima altura del contenedor igual a la altura de la pantalla */
+   
+   
 }
 
 /* Opcional: estilo para asegurar que el contenedor ocupa toda la pantalla */
@@ -35,30 +36,44 @@ html, body {
 
 .div1 {
     grid-area: div1;
-    background-color: rgba(102, 38, 26, 0.938); /* Color de fondo con opacidad para ver la imagen */
-    border: 3px solid black;
+    background-color: rgba(238, 229, 227, 0.938); /* Color de fondo con opacidad para ver la imagen */
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 10px;
+  
+
+}
+
+.agrecol{
+    width: 280px;
+    height: 280px;
+    left: 10px;
+
 }
 
 .div2 {
     grid-area: div2;
     background-color: rgba(173, 216, 230, 0.8); /* Color de fondo con opacidad para ver la imagen */
-    border: 1px solid black;
+    border: 1px solid rgb(255, 249, 249);
+    border-radius: 10px;
 }
 
 .div3 {
     grid-area: div3;
     background-color: rgba(144, 238, 144, 0.8); /* Color de fondo con opacidad para ver la imagen */
-    border: 1px solid black;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
 }
 
 .div4 {
     grid-area: div4;
     background-color: rgba(255, 255, 224, 0.8); /* Color de fondo con opacidad para ver la imagen */
-    border: 1px solid black;
+    border: 1px solid rgb(255, 230, 230);
+    border-radius: 10px;
 }
 
 .div5 {
     grid-area: div5;
     background-color: rgba(255, 182, 193, 0.8); /* Color de fondo con opacidad para ver la imagen */
     border: 1px solid black;
+    border-radius: 10px;
 }
