@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #bdd509;
+    }
+    td {
+        background-color: #7bd25bce;
+    }
+    .activo {
+        background-color: #dff0d8;
+        font-weight: bold;
+    }
+    caption {
+        font-size: 1.5em;
+        margin: 10px 0;
+    }
+</style>
+<body>
+</head>
+<body>
+    <table id="horario">
+        <caption>Horario de Atención</caption>
+        <thead>
+            <tr>
+                <th>Día</th>
+                <th>Horario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>martes</td>
+                <td>8:30 a. m.–6 p. m.</td>
+            </tr>
+            <tr>
+                <td>miércoles</td>
+                <td>8:30 a. m.–6 p. m.</td>
+            </tr>
+            <tr>
+                <td>jueves</td>
+                <td>8:30 a. m.–6 p. m.</td>
+            </tr>
+            <tr>
+                <td>viernes</td>
+                <td>8:30 a. m.–6 p. m.</td>
+            </tr>
+            <tr>
+                <td>sábado</td>
+                <td>Cerrado</td>
+            </tr>
+            <tr>
+                <td>domingo</td>
+                <td>8–10:30 a. m.</td>
+            </tr>
+            <tr>
+                <td>lunes</td>
+                <td>8:30 a. m.–6 p. m.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function formatearHora(hora) {
+            return hora < 10 ? '0' + hora : hora;
+        }
+
+        function horaActual() {
+            const ahora = new Date();
+            return {
+                dia: ahora.toLocaleDateString('es-ES', { weekday: 'long' }).toLowerCase(),
+                hora: ahora.getHours(),
+                minuto: ahora.getMinutes()
+            };
+        }
+
+        function actualizarTabla() {
+            const horarios = {
+                'martes': { apertura: '8:30', cierre: '18:00' },
+                'miércoles': { apertura: '8:30', cierre: '18:00' },
+                'jueves': { apertura: '8:30', cierre: '18:00' },
+                'viernes': { apertura: '8:30', cierre: '18:00' },
+                'sábado': { apertura: 'Cerrado', cierre: '' },
+                'domingo': { apertura: '8:00', cierre: '10:30' },
+                'lunes': { apertura: '8:30', cierre: '18:00' }
+            };
+
+            const ahora = horaActual();
+            const diaActual = ahora.dia;
+            const horaActual = formatearHora(ahora.hora) + ':' + formatearHora(ahora.minuto);
+            
+            const filas = document.querySelectorAll('#horario tbody tr');
+
+            filas.forEach(fila => {
+                const dia = fila.cells[0].textContent.toLowerCase();
+                const celdaHorario = fila.cells[1];
+
+                if (horarios[dia].apertura === 'Cerrado') {
+                    fila.classList.remove('activo');
+                } else {
+                    const [horaApertura, minutoApertura] = horarios[dia].apertura.split(':').map(Number);
+                    const [horaCierre, minutoCierre] = horarios[dia].cierre.split(':').map(Number);
+
+                    const horaActualMinutos = ahora.hora * 60 + ahora.minuto;
+                    const aperturaMinutos = horaApertura * 60 + minutoApertura;
+                    const cierreMinutos = horaCierre * 60 + minutoCierre;
+
+                    if (horaActualMinutos >= aperturaMinutos && horaActualMinutos <= cierreMinutos) {
+                        fila.classList.add('activo');
+                    } else {
+                        fila.classList.remove('activo');
+                    }
+                }
+            });
+        }
+
+        // Inicializar la tabla al cargar la página
+        actualizarTabla();
+
+        // Opcional: Actualizar el horario cada minuto
+        setInterval(actualizarTabla, 60000);
+    </script>
+</body>
+</html>
