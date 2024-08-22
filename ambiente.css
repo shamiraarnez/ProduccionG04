@@ -1,0 +1,214 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(167, 222, 135);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    grid-template-rows: repeat(3, 400px) repeat(3, 300px); /* Seis filas con dos tamaños diferentes */
+    grid-template-areas:
+        "div1 div2"
+        "div3 div4"
+        "div5 div6"
+        "div7 div8"
+        "div9 div10"
+        "div11 div12"; /* Asignación de áreas */
+    width: 90vw; /* Ancho del contenedor */
+    max-width: 1800px; /* Limitar el ancho máximo del contenedor */
+    margin: auto; /* Centrar el contenedor horizontalmente */
+    gap: 10px; /* Espacio entre los divs */
+}
+
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div11, .div12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.div1 { 
+    grid-area: div1; 
+    background-color: #ff6347; /* Tomate */
+    width: 400px; 
+    height: 400px; 
+}
+
+.div2 { 
+    grid-area: div2; 
+    background-color: #4682b4; /* Azul acero */
+    width: 600px; 
+    height: 200px; 
+}
+
+.div3 { 
+    grid-area: div3; 
+    background-color: #32cd32; /* Lima verde */
+    width: 600px; 
+    height: 200px;
+}
+
+.div4 { 
+    grid-area: div4; 
+    background-color: #ffa500; /* Naranja */
+    width: 400px; 
+    height: 400px; 
+}
+
+.div5 { 
+    grid-area: div5; 
+    background-color: #6a5acd; /* Pizarra azul */
+    width: 400px; 
+    height: 400px; 
+}
+
+.div6 { 
+    grid-area: div6; 
+    background-color: #ff4500; /* Naranja rojo */
+    width: 600px; 
+    height: 200px;
+}
+
+.div7 { 
+    grid-area: div7; 
+    background-color: #008080; /* Verde azulado */
+    width: 600px; 
+    height: 200px;
+}
+
+.div8 { 
+    grid-area: div8; 
+    background-color: #d2691e; /* Chocolate */
+    width: 400px; 
+    height: 400px; 
+}
+
+.div9 { 
+    grid-area: div9; 
+    background-color: #1e90ff; /* Azul dodger */
+    width: 400px; 
+    height: 400px; 
+}
+
+.div10 { 
+    grid-area: div10; 
+    background-color: #dc143c; /* Carmesí */
+    width: 600px; 
+    height: 200px;
+}
+
+.div11 { 
+    grid-area: div11; 
+    background-color: #2e8b57; /* Verde marino */
+    width: 600px; 
+    height: 200px;
+}
+
+.div12 { 
+    grid-area: div12; 
+    background-color: #ff1493; /* Rosa profundo */
+    width: 400px; 
+    height: 400px; 
+}
+
+.parent div:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al 105% del tamaño original al pasar el ratón */
+}
+
+/* Centra los elementos dentro de cada grid area */
+.div1 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div1; 
+}
+
+.div2 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div2; 
+}
+
+.div3 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div3; 
+}
+
+.div4 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div4; 
+}
+
+.div5 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div5; 
+}
+
+.div6 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div6; 
+}
+
+.div7 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div7; 
+}
+
+.div8 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div8; 
+}
+
+.div9 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div9; 
+}
+
+.div10 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div10; 
+}
+
+.div11 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div11; 
+}
+
+.div12 { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: div12; 
+}
+ 

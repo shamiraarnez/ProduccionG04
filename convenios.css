@@ -1,79 +1,124 @@
 html, body {
-    height: 100%;
+    height: 100%; /* Ajusta la altura al 100% para cubrir toda la pantalla */
     margin: 0;
-    background-image: url(https://media4.giphy.com/media/xdkXW7Scx6gus/source.gif);
-    background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    min-height: 50vh; /* Mínima altura del contenedor igual a la altura de la pantalla */
+    background-image: url("https://i.pinimg.com/564x/34/ec/7f/34ec7fc67ff4260c99a6e8ad002320dd.jpg");
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
 /* El contenedor principal de la cuadrícula */
 .parent {
     display: grid;
-    grid-template-columns: 34fr; /* Una sola columna */
-    width: 90vw;
-    grid-template-rows: repeat(5, 300px); /* Altura fija para cada fila */
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    grid-template-rows: repeat(4, 300px) 500px; /* Altura fija para cada fila */
     grid-template-areas:
-        "div1"
-        "div2"
-        "div3"
-        "div4"
-        "div5";
-    gap: 30px; /* Espacio entre los elementos, ajustable */
-    
-    /* Configuración de la imagen de fondo */
-   
-   
+        "div1 div1"
+        "div2 div2"
+        "div3 div3"
+        "div4 div4"
+        "div5 div6"; /* Div5 y Div6 en la última fila lado a lado */
+    width: 90vw;
+    margin: 20px auto;
+    gap: 20px; /* Añade separación entre las cajas */
 }
 
-/* Opcional: estilo para asegurar que el contenedor ocupa toda la pantalla */
-html, body {
-    height: 100%;
-    margin: 0;
+/* Estilo para cada contenedor de imagen */
+.div1, .div2, .div3, .div4, .div5, .div6 {
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease; /* Añade una transición suave al contenedor */
 }
 
+/* Alineación específica para cada imagen */
 .div1 {
     grid-area: div1;
-    background-color: rgba(238, 229, 227, 0.938); /* Color de fondo con opacidad para ver la imagen */
-    border: 3px solid rgb(255, 255, 255);
-    border-radius: 10px;
-  
-
+    background-color: rgba(232, 238, 230, 0.726);
+    border: 3px solid rgb(22, 114, 4);
+    justify-content: flex-start; /* Alinea la imagen a la izquierda */
 }
 
-.agrecol{
-    width: 280px;
+.agrecol {
+    width: 500px;
     height: 280px;
-    left: 10px;
-
 }
 
 .div2 {
     grid-area: div2;
-    background-color: rgba(173, 216, 230, 0.8); /* Color de fondo con opacidad para ver la imagen */
+    background-color: rgba(128, 37, 72, 0.8);
     border: 1px solid rgb(255, 249, 249);
-    border-radius: 10px;
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
+}
+
+.univalle {
+    width: 300px;
+    height: 280px;
 }
 
 .div3 {
     grid-area: div3;
-    background-color: rgba(144, 238, 144, 0.8); /* Color de fondo con opacidad para ver la imagen */
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 10px;
+    background-color: rgba(112, 201, 233, 0.8);
+    border: 1px solid rgb(0, 0, 0);
+    justify-content: center; /* Centra la imagen */
+}
+
+.GAMC {
+    width: 310px;
+    height: 310px;
 }
 
 .div4 {
     grid-area: div4;
-    background-color: rgba(255, 255, 224, 0.8); /* Color de fondo con opacidad para ver la imagen */
+    background-color: rgba(8, 8, 8, 0.8);
     border: 1px solid rgb(255, 230, 230);
-    border-radius: 10px;
+    justify-content: flex-end; /* Alinea la imagen a la derecha */
+}
+
+.laguna {
+    width: 260px;
+    height: 280px;
 }
 
 .div5 {
     grid-area: div5;
-    background-color: rgba(255, 182, 193, 0.8); /* Color de fondo con opacidad para ver la imagen */
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: rgba(44, 1, 7, 0.8);
+    border: 1px solid rgb(255, 255, 255);
+    justify-content: center; /* Centra la imagen */
+}
+
+.duralit {
+    width: 600px;
+    height: 300px;
+}
+
+.div6 {
+    grid-area: div6;
+    background-color: rgba(0, 77, 8, 0.8);
+    border: 1px solid rgb(255, 255, 255);
+    justify-content: center; /* Centra la imagen */
+}
+
+.banco {
+    width: 600px;
+    height: 300px;
+}
+
+/* Transición sutil en hover para las cajas */
+.parent > a {
+    display: block; /* Hace que el enlace ocupe todo el espacio disponible */
+    overflow: hidden; /* Asegura que el contenido no se desborde del contenedor */
+    position: relative; /* Para posicionar el contenido si es necesario */
+    transition: transform 0.3s ease; /* Añade una transición suave al enlace */
+}
+
+.parent > a:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la caja */
+}
+
+/* Estilo para las imágenes */
+.parent > a img {
+    display: block; /* Elimina el espacio debajo de la imagen */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción sin deformarse */
 }
